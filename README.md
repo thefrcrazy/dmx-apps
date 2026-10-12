@@ -59,8 +59,8 @@ d'après [`mirror.json`](mirror.json) :
 - le bouton « Télécharger » du catalogue suit la dernière stable.
 
 Les apps lisent dmx-apps d'abord et retombent sur leur ancien dépôt quand il
-ne répond pas. DmxUtilities publie directement ici et dans
-`dmx_utils-releases` depuis son script de release.
+ne répond pas. DmxUtilities publie directement ici depuis son script de
+release ; son ancien dépôt `dmx_utils-releases` n'est plus publié après la 1.9.5.
 
 Quand un dépôt source passe en privé, le jeton du workflow ne peut plus le
 lire : sa CI devra alors publier ici elle-même (jeton à portée `dmx-apps`).
