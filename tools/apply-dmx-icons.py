@@ -15,9 +15,9 @@ Conventions :
   la taille des autres apps dans le Dock.
 - iOS : catalogue universel 1024 Any + Dark (ios/AppIcon-modern.appiconset).
 - Web : favicons ICO, PNG et SVG, apple-touch-icon opaque, icônes PWA « any »
-  (symbole) et « maskable » (fond plein) séparées. iOS tire lui-même les icônes
-  sombre, transparente et teintée de l'apple-touch-icon : voir
-  adaptive_touch_icon() pour DmxMoney.
+  (symbole) et « maskable » (fond plein) séparées. L'apple-touch-icon est
+  recopiée depuis la bibliothèque, avec son fond clair #F0F0F0 et les
+  couleurs originales du symbole.
 - Barres de menus et de notification : silhouettes template, noires et
   blanches de tray/.
 """
@@ -27,7 +27,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from PIL import Image, ImageChops
+from PIL import Image
 
 LIBRARY = Path(sys.argv[1]).expanduser()
 APP = sys.argv[2]
@@ -112,45 +112,6 @@ def web(code: str, public: Path, *, logo: Path | None = None, favicon_png: str |
         resized(w / "icon-512.png", logo)
 
 
-def adaptive_touch_icon(code: str, destination: Path) -> None:
-    """web/apple-touch-icon.png that iOS can turn into dark, clear and tinted icons.
-
-    iOS builds those variants itself by separating the logo from the plain
-    background of the apple-touch-icon (no declaration exists for them). It gives
-    up when a part of the logo is a gray too close to the background: here the
-    middle of the DmxMoney arrow, where its teal fades into cream. Those pixels
-    get more saturation (enough above the threshold measured in the Simulator,
-    where half of it was not enough), drawn at 4x and then reduced.
-    """
-    import colorsys
-
-    reference = Image.open(export(code) / "web/apple-touch-icon.png").convert("RGB")
-    size = reference.size[0]
-    background = reference.getpixel((0, 0))
-    box = Image.eval(ImageChops.difference(reference, Image.new("RGB", reference.size, background)),
-                     lambda v: 255 if v > 6 else 0).getbbox()
-    logo = Image.open(export(code) / "logo-1024.png").convert("RGBA")
-    logo = logo.crop(logo.getbbox())
-    scale = 4 * (box[2] - box[0]) / logo.width
-    logo = logo.resize((round(logo.width * scale), round(logo.height * scale)), Image.LANCZOS)
-    pixels = logo.load()
-    for y in range(logo.height):
-        for x in range(logo.width):
-            r, g, b, a = pixels[x, y]
-            distance = max(abs(r - background[0]), abs(g - background[1]), abs(b - background[2]))
-            if a <= 200 or distance >= 32:
-                continue
-            k = 0.85 * (32 - distance) / 32
-            h, s, v = colorsys.rgb_to_hsv(r / 255, g / 255, b / 255)
-            s, v = min(1, s * (1 + 2.5 * k) + 0.06 * k), min(1, v * (1 + 0.12 * k))
-            pixels[x, y] = tuple(round(c * 255) for c in colorsys.hsv_to_rgb(h, s, v)) + (a,)
-    canvas = Image.new("RGBA", (4 * size, 4 * size), background + (255,))
-    canvas.alpha_composite(logo, (4 * box[0], 4 * box[1]))
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    canvas.convert("RGB").resize((size, size), Image.LANCZOS).save(destination, optimize=True)
-    written.append(destination)
-
-
 def utilities() -> None:
     e, app = export("UTL"), REPO / "DmxUtilities"
     copy_tree(LIBRARY / "icon-composer/DMX-UTL-01.icon", app / "DmxUtilities.icon")
@@ -204,8 +165,6 @@ def money() -> None:
     # Compagnon PWA
     pwa = REPO / "pwa/public"
     web("MON", pwa, logo=pwa / "logo.png")
-    written.remove(pwa / "apple-touch-icon.png")
-    adaptive_touch_icon("MON", pwa / "apple-touch-icon.png")
     copy(e / "web/icon-192.png", pwa / "pwa-192.png")
     copy(e / "web/icon-512.png", pwa / "pwa-512.png")
     for size in (192, 512):
