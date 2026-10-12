@@ -1,13 +1,13 @@
 {
-  "version": "2.1.5",
-  "notes": "- macOS : l’icône de l’application respecte de nouveau la marge de la grille Apple ; en 2.1.4 elle remplissait tout le carré et paraissait plus grande que les autres apps dans le Dock.\n- Distribution stable `2.1.5`, build Apple 14.",
+  "version": "2.1.6",
+  "notes": "- macOS 26 (Apple Silicon) : l’icône suit le mode sombre et les icônes teintées du Dock et du Finder. Elle vient désormais du document Icon Composer de la nouvelle identité ; la version Intel/Catalina garde l’icône classique.\n- Distribution stable `2.1.6`, build Apple 15.",
   "platforms": {
     "darwin-arm64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.5/DmxMoney-2.1.5-apple-silicon.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.6/DmxMoney-2.1.6-apple-silicon.dmg",
       "minimumSystemVersion": "26.0"
     },
     "darwin-x86_64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.5/DmxMoney-2.1.5-intel-catalina.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.6/DmxMoney-2.1.6-intel-catalina.dmg",
       "minimumSystemVersion": "10.15"
     }
   }
