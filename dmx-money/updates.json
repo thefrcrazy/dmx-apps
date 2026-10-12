@@ -1,13 +1,13 @@
 {
-  "version": "2.1.4",
-  "notes": "- Nouveau logo DmxMoney, issu de la nouvelle identité DMX : icône d’application sur macOS, iOS, Windows et Linux, icône de la barre des menus macOS et icônes du compagnon mobile (PWA, écran d’accueil iOS et Android).\n- Première mise à jour qui s’installe dans l’application sur macOS depuis la 2.1.3 : téléchargement, vérification de la signature, remplacement et redémarrage.\n- Distribution stable `2.1.4`, build Apple 13.",
+  "version": "2.1.5",
+  "notes": "- macOS : l’icône de l’application respecte de nouveau la marge de la grille Apple ; en 2.1.4 elle remplissait tout le carré et paraissait plus grande que les autres apps dans le Dock.\n- Distribution stable `2.1.5`, build Apple 14.",
   "platforms": {
     "darwin-arm64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.4/DmxMoney-2.1.4-apple-silicon.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.5/DmxMoney-2.1.5-apple-silicon.dmg",
       "minimumSystemVersion": "26.0"
     },
     "darwin-x86_64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.4/DmxMoney-2.1.4-intel-catalina.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.5/DmxMoney-2.1.5-intel-catalina.dmg",
       "minimumSystemVersion": "10.15"
     }
   }
