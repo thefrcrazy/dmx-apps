@@ -89,7 +89,7 @@
       "name": "DMX Board",
       "status": "dev",
       "kind": "web",
-      "icon": "icons/dmx-board.svg",
+      "icon": "icons/dmx-board.png",
       "tagline": "Documents, tâches, tableurs et création visuelle.",
       "description": "Suite native et auto-hébergeable : boards, documents à blocs, tâches en Kanban, tableurs et canvas. En cours de développement ; les versions publiques arriveront ici.",
       "platforms": [

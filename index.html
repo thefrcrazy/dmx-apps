@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DMX Apps</title>
 <meta name="description" content="Toutes les applications DMX, gratuites : téléchargements, mises à jour et liens.">
-<link rel="icon" href="icons/dmx-utilities.png">
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="icons/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <style>
   :root {
     --bg: #f6f6f4;
@@ -43,6 +45,7 @@
     font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
   main { max-width: 1040px; margin: 0 auto; padding: 56px 16px 72px; }
+  header .brand { width: 64px; height: 64px; border-radius: 15px; margin-bottom: 16px; }
   header h1 { font-size: 2.2rem; letter-spacing: -0.02em; margin: 0 0 8px; }
   header p { color: var(--muted); margin: 0; max-width: 60ch; }
   .grid {
@@ -61,7 +64,7 @@
     gap: 12px;
   }
   .top { display: flex; align-items: center; gap: 14px; }
-  .top img { width: 56px; height: 56px; border-radius: 12px; flex: none; }
+  .top img { width: 56px; height: 56px; border-radius: 13px; flex: none; }
   .top h2 { font-size: 1.15rem; margin: 0; }
   .status { font-size: 0.8rem; font-weight: 600; }
   .status.stable { color: var(--ok); }
@@ -92,6 +95,7 @@
 <body>
 <main>
   <header>
+    <img class="brand" src="icons/dmx-apps.png" alt="" width="64" height="64">
     <h1>DMX Apps</h1>
     <p>Toutes mes applications, gratuites. Téléchargez-les ici ; celles qui se mettent à jour automatiquement suivent les flux publiés dans ce même dépôt.</p>
   </header>
