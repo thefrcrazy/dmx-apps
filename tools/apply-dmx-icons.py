@@ -151,10 +151,7 @@ def money() -> None:
         resized(symbol, icons / name)
     icns("MON", icons / "icon.icns")
     copy(e / "windows/DMX-MON-01.ico", icons / "icon.ico")
-    for png in (icons / "android").glob("mipmap-*/*.png"):
-        density = png.parent.name
-        source = e / "android/res" / (density.replace("mipmap", "drawable") if "foreground" in png.name else density) / png.name
-        resized(source if source.exists() else symbol, png)
+    copy_tree(e / "android/res", icons / "android")
     for size in (16, 24, 32, 48, 64, 128, 256, 512):
         copy(e / f"linux/hicolor/{size}x{size}/apps/dmx-money-tricolor-arrow.png",
              icons / f"hicolor/{size}x{size}/apps/com.dmxmoney.app.png")
