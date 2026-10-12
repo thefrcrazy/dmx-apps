@@ -1,0 +1,68 @@
+{
+  "$comment": "Catalogue des applications DMX distribuées gratuitement. index.html lit ce fichier ; chaque app décrit où la télécharger ou l'ouvrir.",
+  "apps": [
+    {
+      "id": "dmx-utilities",
+      "name": "DmxUtilities",
+      "status": "stable",
+      "kind": "desktop",
+      "icon": "icons/dmx-utilities.png",
+      "tagline": "La boîte à outils de la barre de menus macOS.",
+      "description": "Historique du presse-papiers, OCR d'écran, pipette de couleur, captures épinglées, enregistrement d'écran et sélecteur de fenêtres, réunis dans une seule app de barre de menus. Mises à jour automatiques via Sparkle.",
+      "platforms": ["macOS 26+ (Apple Silicon)"],
+      "links": [
+        { "label": "Télécharger", "url": "https://github.com/thefrcrazy/dmx_utils-releases/releases/latest", "primary": true },
+        { "label": "Flux de mise à jour", "url": "dmx-utilities/appcast.xml" }
+      ]
+    },
+    {
+      "id": "dmx-money",
+      "name": "DmxMoney 2",
+      "status": "stable",
+      "kind": "desktop",
+      "icon": "icons/dmx-money.png",
+      "tagline": "Vos finances personnelles, en local et en privé.",
+      "description": "Comptes, journal de transactions, budgets, échéancier, analyses et prédictions de trésorerie. Application native sur chaque plateforme autour d'un noyau Rust partagé ; reprend automatiquement les données de DmxMoney 1.x.",
+      "platforms": ["macOS 26+ (Apple Silicon)", "macOS 10.15+ (Intel)", "Windows 10+ (x64, ARM64)", "Linux (x64)"],
+      "links": [
+        { "label": "Télécharger", "url": "https://github.com/thefrcrazy/dmx-money-2/releases/latest", "primary": true }
+      ]
+    },
+    {
+      "id": "dmx-server-manager",
+      "name": "DmxServerManager",
+      "status": "stable",
+      "kind": "server",
+      "icon": "icons/dmx-server-manager.png",
+      "tagline": "Le panneau auto-hébergé pour vos serveurs de jeux.",
+      "description": "Installation et mise à jour transactionnelles, supervision, console et journaux en temps réel, sauvegardes locales. Minecraft, Valheim, Palworld, Rust, Satisfactory, Hytale et d'autres. Releases signées (Sigstore) avec checksums.",
+      "platforms": ["Linux AMD64", "Windows AMD64", "Docker"],
+      "links": [
+        { "label": "Télécharger", "url": "https://github.com/thefrcrazy/DmxServerManager/releases/latest", "primary": true },
+        { "label": "Installation", "url": "https://github.com/thefrcrazy/DmxServerManager/blob/main/docs/INSTALLATION.md" }
+      ]
+    },
+    {
+      "id": "dmx-dart",
+      "name": "DmxDart",
+      "status": "soon",
+      "kind": "web",
+      "icon": "icons/dmx-dart.png",
+      "tagline": "Les fléchettes multijoueur, à distance.",
+      "description": "PWA de fléchettes : X01 individuel ou en équipes, Cricket, suggestions de checkout, reconnexion automatique. Le serveur synchronise la partie en temps réel entre les joueurs.",
+      "platforms": ["Web (PWA)"],
+      "links": []
+    },
+    {
+      "id": "dmx-board",
+      "name": "DMX Board",
+      "status": "dev",
+      "kind": "web",
+      "icon": "icons/dmx-board.svg",
+      "tagline": "Documents, tâches, tableurs et création visuelle.",
+      "description": "Suite native et auto-hébergeable : boards, documents à blocs, tâches en Kanban, tableurs et canvas. En cours de développement ; les versions publiques arriveront ici.",
+      "platforms": ["Web", "Auto-hébergé"],
+      "links": []
+    }
+  ]
+}
