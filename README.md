@@ -42,3 +42,27 @@ dmx-apps/
   (`releases/download/<tag>/<fichier>`), jamais vers `latest`.
 - Une release ne touche que les fichiers de son app : jamais de suppression ou
   de réécriture dans le dossier d'une autre.
+
+## Miroir
+
+Pendant la transition, DmxServerManager et DmxMoney publient toujours leurs
+releases dans leur propre dépôt (public). Le workflow
+[`mirror.yml`](.github/workflows/mirror.yml) les recopie ici toutes les
+15 minutes (ou à la demande : `gh workflow run mirror.yml -R thefrcrazy/dmx-apps`),
+d'après [`mirror.json`](mirror.json) :
+
+- chaque release source à partir de `since` devient `<app>-<tag>` ici, avec
+  les mêmes assets, notes et statut de préversion ;
+- les flux servis par Pages sont réécrits depuis la dernière release miroir
+  (`stable`), puis depuis la dernière préversion si elle est plus récente
+  (`prerelease`) ;
+- le bouton « Télécharger » du catalogue suit la dernière stable.
+
+Les apps lisent dmx-apps d'abord et retombent sur leur ancien dépôt quand il
+ne répond pas. DmxUtilities publie directement ici et dans
+`dmx_utils-releases` depuis son script de release.
+
+Quand un dépôt source passe en privé, le jeton du workflow ne peut plus le
+lire : sa CI devra alors publier ici elle-même (jeton à portée `dmx-apps`).
+GitHub suspend les workflows planifiés après 60 jours sans activité sur le
+dépôt ; un `gh workflow run` les relance.

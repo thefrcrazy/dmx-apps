@@ -1,0 +1,52 @@
+name: Mirror releases
+
+# Recopie les releases des dépôts sources (mirror.json) et met à jour les flux
+# servis par Pages. Les dépôts sources sont publics : le jeton du workflow
+# suffit, aucun secret n'est nécessaire.
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: mirror
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Mirror new releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/mirror.py
+
+      - name: Publish feeds and catalog
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Feeds already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Miroir : flux et catalogue mis à jour"
+          # Un script de release local (DmxUtilities) peut avoir poussé entre-temps.
+          pushed=false
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then pushed=true; break; fi
+            git pull --rebase origin main
+          done
+          [[ "$pushed" == true ]]
+          # Un push fait avec le jeton du workflow ne relance pas toujours Pages.
+          gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds" >/dev/null

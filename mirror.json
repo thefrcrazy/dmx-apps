@@ -1,0 +1,52 @@
+{
+  "$comment": "Releases recopiées depuis le dépôt source de chaque app par .github/workflows/mirror.yml. Voir le README, section Miroir.",
+  "apps": [
+    {
+      "id": "dmx-server-manager",
+      "source": "thefrcrazy/DmxServerManager",
+      "since": "v1.2.7",
+      "skip_assets": ["release-manifest.json"],
+      "rename_assets": { "dmx-apps-release-manifest.json": "release-manifest.json" },
+      "rewrite_assets": [],
+      "pages": {
+        "stable": {
+          "dmx-server-manager/release-manifest.json": "release-manifest.json",
+          "dmx-server-manager/latest/docker-compose.yml": "docker-compose.yml",
+          "dmx-server-manager/latest/docker-compose.yml.sigstore.json": "docker-compose.yml.sigstore.json",
+          "dmx-server-manager/latest/config.docker.example.toml": "config.docker.example.toml",
+          "dmx-server-manager/latest/config.docker.example.toml.sigstore.json": "config.docker.example.toml.sigstore.json",
+          "dmx-server-manager/latest/dmx-server-manager-install-docker.sh": "dmx-server-manager-install-docker.sh",
+          "dmx-server-manager/latest/dmx-server-manager-install-docker.sh.sigstore.json": "dmx-server-manager-install-docker.sh.sigstore.json",
+          "dmx-server-manager/latest/dmx-server-manager-install-linux.sh": "dmx-server-manager-install-linux.sh",
+          "dmx-server-manager/latest/dmx-server-manager-install-linux.sh.sigstore.json": "dmx-server-manager-install-linux.sh.sigstore.json",
+          "dmx-server-manager/latest/dmx-server-manager-install-windows.ps1": "dmx-server-manager-install-windows.ps1",
+          "dmx-server-manager/latest/dmx-server-manager-install-windows.ps1.sigstore.json": "dmx-server-manager-install-windows.ps1.sigstore.json"
+        },
+        "prerelease": {}
+      }
+    },
+    {
+      "id": "dmx-money",
+      "source": "thefrcrazy/dmx-money-2",
+      "since": "v2.1.0",
+      "skip_assets": [],
+      "rename_assets": {},
+      "rewrite_assets": ["updates.json", "updates-rc.json"],
+      "pages": {
+        "stable": {
+          "dmx-money/updates.json": "updates.json",
+          "dmx-money/updates-rc.json": "updates.json",
+          "dmx-money/win/releases.win-x64.json": "releases.win-x64.json",
+          "dmx-money/win/releases.win-arm64.json": "releases.win-arm64.json",
+          "dmx-money/win-rc/releases.win-x64.json": "releases.win-x64.json",
+          "dmx-money/win-rc/releases.win-arm64.json": "releases.win-arm64.json"
+        },
+        "prerelease": {
+          "dmx-money/updates-rc.json": "updates-rc.json",
+          "dmx-money/win-rc/releases.win-x64.json": "releases.win-x64.json",
+          "dmx-money/win-rc/releases.win-arm64.json": "releases.win-arm64.json"
+        }
+      }
+    }
+  ]
+}
