@@ -1,0 +1,14 @@
+{
+  "version": "2.1.0",
+  "notes": "- Version stable du compagnon Internet : PWA sur Cloudflare Pages et relais chiffré, sans DNS individuel ni serveur local. Le téléphone fonctionne en Wi-Fi, 4G ou 5G lorsque le bureau reste ouvert et connecté.\n- Sessions mobiles conservées après réouverture ou rafraîchissement, avec appairage par passkey, verrouillage volontaire, expiration et révocation des appareils.\n- Journal mobile virtualisé ; journal macOS moderne et Intel à cellules AppKit réutilisables, tri hors interface et arrêt des mises à jour au changement de page. Budgets paresseux et tri de l’échéancier mis en cache.\n- Modifications concurrentes protégées : les formulaires conservent leur état initial, les conflits sont signalés et les virements sont appliqués atomiquement.",
+  "platforms": {
+    "darwin-arm64": {
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.0/DmxMoney-2.1.0-apple-silicon.dmg",
+      "minimumSystemVersion": "26.0"
+    },
+    "darwin-x86_64": {
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.0/DmxMoney-2.1.0-intel-catalina.dmg",
+      "minimumSystemVersion": "10.15"
+    }
+  }
+}

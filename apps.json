@@ -41,7 +41,7 @@
       "links": [
         {
           "label": "Télécharger",
-          "url": "https://github.com/thefrcrazy/dmx-money-2/releases/latest",
+          "url": "https://github.com/thefrcrazy/dmx-apps/releases/tag/dmx-money-v2.1.0",
           "primary": true
         }
       ]
@@ -62,7 +62,7 @@
       "links": [
         {
           "label": "Télécharger",
-          "url": "https://github.com/thefrcrazy/DmxServerManager/releases/latest",
+          "url": "https://github.com/thefrcrazy/dmx-apps/releases/tag/dmx-server-manager-v1.2.7",
           "primary": true
         },
         {
