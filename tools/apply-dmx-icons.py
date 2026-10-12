@@ -116,7 +116,9 @@ def utilities() -> None:
     macos_iconset("UTL", app / "Assets.xcassets/AppIcon.appiconset")
     copy(e / "tray/menuTemplate.png", app / "Assets.xcassets/MenuBarIcon.imageset/icon_18x18.png")
     copy(e / "tray/menuTemplate@2x.png", app / "Assets.xcassets/MenuBarIcon.imageset/icon_18x18@2x.png")
+    # iCloud Drive folders: logos without the app-icon plate (DmxApps, DmxUtils).
     copy(export("APP") / "logo-1024.png", app / "Assets.xcassets/DmxFolderLogo.imageset/DmxFolderLogo.png")
+    copy(e / "logo-1024.png", app / "Assets.xcassets/DmxUtilsFolderLogo.imageset/DmxUtilsFolderLogo.png")
     for name in ("icon_source.png", "source.png"):
         copy(e / "logo-1024.png", app / "Assets.xcassets" / name)
     # Safari toolbar item: 18 pt template PDF (rsvg-convert counts 96 px per inch).
