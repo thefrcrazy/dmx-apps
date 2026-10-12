@@ -62,7 +62,26 @@ Les apps lisent dmx-apps d'abord et retombent sur leur ancien dépôt quand il
 ne répond pas. DmxUtilities publie directement ici depuis son script de
 release ; son ancien dépôt `dmx_utils-releases` n'est plus publié après la 1.9.5.
 
-Quand un dépôt source passe en privé, le jeton du workflow ne peut plus le
-lire : sa CI devra alors publier ici elle-même (jeton à portée `dmx-apps`).
-GitHub suspend les workflows planifiés après 60 jours sans activité sur le
-dépôt ; un `gh workflow run` les relance.
+Les releases de DmxServerManager et DmxMoney lancent ce miroir dès leur
+publication avec le secret `DMX_APPS_TOKEN` ; la planification n'est qu'un filet
+(GitHub ne la déclenche pas toujours, et la suspend après 60 jours sans
+activité). Quand un dépôt source passe en privé, le jeton du workflow ne peut
+plus le lire : sa CI devra alors publier ici elle-même, comme DmxUtilities.
+
+`DMX_APPS_TOKEN` est un token *fine-grained* limité à ce dépôt, permissions
+**Contents** et **Actions** en lecture et écriture, enregistré comme secret
+Actions dans `dmx_utils`, `DmxServerManager` et `dmx-money-2`.
+
+## Icônes
+
+Les icônes des apps viennent de la bibliothèque DMX-Icons. Après chaque
+régénération de la bibliothèque :
+
+```bash
+python3 tools/apply-dmx-icons.py "~/Developer/personal/Icons App/DMX-Icons" money ~/Developer/work/apps/dmx-money-2
+```
+
+(`utilities`, `money`, `server-manager`, `dart`, `board` ou `catalog`.) Le script
+écrit les fichiers aux emplacements que chaque app attend ; ses conventions
+(marge de la grille Apple, catalogue iOS Any + Dark, favicons…) sont décrites en
+tête du fichier.
