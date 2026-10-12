@@ -75,7 +75,7 @@ def mirror_release(app: dict, release: dict, tag: str) -> None:
             gh("release", "create", tag, "--repo", TARGET, "--target", "main",
                "--title", release["name"] or f"{app['id']} {source_tag}",
                "--notes-file", str(notes), *flags, *files)
-            gh("release", "edit", tag, "--repo", TARGET, "--draft=false")
+            gh("release", "edit", tag, "--repo", TARGET, "--draft=false", "--latest=false")
         finally:
             notes.unlink(missing_ok=True)
 
