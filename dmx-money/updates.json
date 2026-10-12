@@ -1,13 +1,13 @@
 {
-  "version": "2.1.1",
-  "notes": "- Les mises à jour arrivent désormais depuis [DMX Apps](https://thefrcrazy.github.io/dmx-apps/), le catalogue qui regroupe toutes les applications DMX. Rien à faire de votre côté.\n- Si DMX Apps ne répond pas, macOS et Windows basculent tout seuls sur l’ancienne adresse (`dmx-money-2`), qui publie les mêmes versions. Sous Linux, « Vérifier » ouvre la page DmxMoney du catalogue.\n- Distribution stable `2.1.1`, build Apple 10.",
+  "version": "2.1.3",
+  "notes": "- macOS : l’installation automatique d’une mise à jour échouait toujours et restaurait l’ancienne version. L’installeur passait l’exigence de signature à `codesign` comme un nom de fichier ; elle est désormais transmise comme texte, et un test la vérifie avec le vrai `codesign`.\n- Remplace la 2.1.2, retirée (repassée en préversion) quelques minutes après sa sortie pour ce défaut. Les installations 2.1.0 à 2.1.2 installent cette version une dernière fois à la main ; les suivantes se font dans l’application.\n- Distribution stable `2.1.3`, build Apple 12.",
   "platforms": {
     "darwin-arm64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.1/DmxMoney-2.1.1-apple-silicon.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.3/DmxMoney-2.1.3-apple-silicon.dmg",
       "minimumSystemVersion": "26.0"
     },
     "darwin-x86_64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.1/DmxMoney-2.1.1-intel-catalina.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.3/DmxMoney-2.1.3-intel-catalina.dmg",
       "minimumSystemVersion": "10.15"
     }
   }
