@@ -1,13 +1,13 @@
 {
-  "version": "2.1.8",
-  "notes": "- macOS (Apple Silicon) : le thème choisi dans **Paramètres → Apparence** (Clair, Sombre ou Système) s’applique à toute l’application — fenêtres, barre latérale, barre d’outils, menus et Liquid Glass. Jusqu’ici, seul le contenu des pages changeait et le reste suivait le système.\n- Distribution stable `2.1.8`, build Apple 17.",
+  "version": "2.1.9",
+  "notes": "- Icône claire sur fond `#F0F0F0` pour distinguer les couleurs du logo sur macOS, iOS / iPadOS, Windows, Linux et le compagnon mobile.\n- Apple Touch Icon identique au rendu canonique, sans adaptation de saturation.\n- Distribution stable `2.1.9`, build Apple 18.",
   "platforms": {
     "darwin-arm64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.8/DmxMoney-2.1.8-apple-silicon.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.9/DmxMoney-2.1.9-apple-silicon.dmg",
       "minimumSystemVersion": "26.0"
     },
     "darwin-x86_64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.8/DmxMoney-2.1.8-intel-catalina.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.9/DmxMoney-2.1.9-intel-catalina.dmg",
       "minimumSystemVersion": "10.15"
     }
   }
