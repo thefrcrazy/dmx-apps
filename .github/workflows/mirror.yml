@@ -5,7 +5,8 @@ name: Mirror releases
 # suffit, aucun secret n'est nécessaire.
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    # Minutes décalées : les créneaux pile (:00, :15…) sont souvent sautés par GitHub.
+    - cron: "7,22,37,52 * * * *"
   workflow_dispatch:
 
 permissions:
