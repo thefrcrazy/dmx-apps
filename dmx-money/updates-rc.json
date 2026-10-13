@@ -1,13 +1,13 @@
 {
-  "version": "2.1.9",
-  "notes": "- Icône claire sur fond `#F0F0F0` pour distinguer les couleurs du logo sur macOS, iOS / iPadOS, Windows, Linux et le compagnon mobile.\n- Apple Touch Icon identique au rendu canonique, sans adaptation de saturation.\n- Distribution stable `2.1.9`, build Apple 18.",
+  "version": "2.1.10",
+  "notes": "- Fond clair de l’icône `#FAFAFA` sur macOS, iOS / iPadOS, Windows, Linux et le compagnon mobile.\n- Agrandissement du symbole et apparences sombres conservés.\n- Distribution stable `2.1.10`, build Apple 19.",
   "platforms": {
     "darwin-arm64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.9/DmxMoney-2.1.9-apple-silicon.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.10/DmxMoney-2.1.10-apple-silicon.dmg",
       "minimumSystemVersion": "26.0"
     },
     "darwin-x86_64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.9/DmxMoney-2.1.9-intel-catalina.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.1.10/DmxMoney-2.1.10-intel-catalina.dmg",
       "minimumSystemVersion": "10.15"
     }
   }
