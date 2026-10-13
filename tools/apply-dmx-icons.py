@@ -16,7 +16,7 @@ Conventions :
 - iOS : catalogue universel 1024 Any + Dark (ios/AppIcon-modern.appiconset).
 - Web : favicons ICO, PNG et SVG, apple-touch-icon opaque, icônes PWA « any »
   (symbole) et « maskable » (fond plein) séparées. L'apple-touch-icon est
-  recopiée depuis la bibliothèque, avec son fond clair #F0F0F0 et les
+  recopiée depuis la bibliothèque, avec son fond clair #FAFAFA et les
   couleurs originales du symbole.
 - Barres de menus et de notification : silhouettes template, noires et
   blanches de tray/.
