@@ -1,79 +1,94 @@
-# DMX Apps
+<p align="center">
+  <img src="icons/dmx-apps.png" alt="" width="96" height="96">
+</p>
 
-Toutes les applications DMX distribuées gratuitement : téléchargements, flux de
-mise à jour automatique et liens vers les web apps.
+<h1 align="center">DMX Apps</h1>
 
-**Catalogue : <https://apps.develop-max.com>**
+<p align="center">
+  Les applications gratuites de Develop Max : binaires signés, flux de mise à jour et historique des versions.
+  <br>
+  <a href="https://apps.develop-max.com"><strong>apps.develop-max.com</strong></a>
+</p>
 
-Le site du catalogue vit dans le dépôt privé `thefrcrazy/dmx-apps-web` et lit les
-GitHub Releases de ce dépôt. Les flux de mise à jour restent servis ici, par GitHub
-Pages (`https://thefrcrazy.github.io/dmx-apps/<app>/…`).
+---
 
-Le code source de chaque application vit dans son propre dépôt, qui peut être
-privé. Ce dépôt public ne contient que ce dont les utilisateurs et les apps
-installées ont besoin : le catalogue, les flux de mise à jour et, dans les
-GitHub Releases, les binaires.
+## Télécharger
 
-## Organisation
+Le plus simple est de passer par **[apps.develop-max.com](https://apps.develop-max.com)** : le site détecte
+votre système, propose la bonne version et donne accès aux bêtas et aux anciennes versions. Les fichiers
+eux-mêmes sont hébergés dans les [releases de ce dépôt](https://github.com/thefrcrazy/dmx-apps/releases).
 
-```
-dmx-apps/
-├── index.html            catalogue (GitHub Pages)
-├── apps.json             liste des apps lue par le catalogue
-├── icons/
-└── <app>/                un dossier par app : ses flux de mise à jour
-    └── appcast.xml       (Sparkle, manifeste JSON… selon l'app)
-```
-
-| App | Dossier | Tags de release |
+| Application | Pour | Plateformes |
 | --- | --- | --- |
-| DmxUtilities | `dmx-utilities/` | `dmx-utilities-v1.9.4` |
-| DmxMoney 2 | `dmx-money/` | `dmx-money-v2.1.1` |
-| DmxServerManager | `dmx-server-manager/` | `dmx-server-manager-v1.2.8` |
-| DmxDart | `dmx-dart/` | `dmx-dart-v1.0.1` |
-| DMX Board | `dmx-board/` | `dmx-board-v1.0.0` |
+| [**DmxUtilities**](https://apps.develop-max.com/utilities) | Une quinzaine d'outils dans la barre de menus : presse-papiers, captures, OCR, Authenticator… | macOS 26+ (Apple Silicon) |
+| [**DmxMoney 2**](https://apps.develop-max.com/money) | Finances personnelles locales et privées | macOS, Windows, Linux |
+| [**DmxServerManager**](https://apps.develop-max.com/server-manager) | Panneau auto-hébergé pour serveurs de jeux | Docker, Linux, Windows |
+| [**DmxDart**](https://apps.develop-max.com/dart) | Fléchettes multijoueur, même à distance | Web (PWA) |
+| [**DmxBoard**](https://apps.develop-max.com/board) | Documents, tâches, tableurs et canvas | En développement |
 
-## Règles pour publier
+Une fois installées, les applications se mettent à jour d'elles-mêmes à partir des flux publiés ici.
 
-- **Tags préfixés par l'app** (`<app>-v<version>`) : plusieurs apps partagent
-  ce dépôt, un tag `v1.0.0` nu serait ambigu. Pas de `/` dans les tags, pour
-  garder des URLs de téléchargement simples.
-- **Ne jamais s'appuyer sur `releases/latest`** : la « dernière release » de ce
-  dépôt peut être celle de n'importe quelle app. Chaque app lit son propre flux,
-  servi par GitHub Pages depuis son dossier :
-  `https://thefrcrazy.github.io/dmx-apps/<app>/…`
-- Les liens de téléchargement des flux pointent vers des releases taguées
-  (`releases/download/<tag>/<fichier>`), jamais vers `latest`.
-- Une release ne touche que les fichiers de son app : jamais de suppression ou
-  de réécriture dans le dossier d'une autre.
+## Rôle de ce dépôt
 
-## Publication depuis les dépôts sources
+Le code de chaque application vit dans son propre dépôt, souvent privé. Ce dépôt public ne contient que ce
+dont les utilisateurs et les apps installées ont besoin :
 
-Chaque application publie directement ses releases, ses flux et ses assets dans ce dépôt via sa propre chaîne de publication (CI/CD ou scripts locaux).
+- **les binaires**, attachés aux GitHub Releases ;
+- **les flux de mise à jour**, servis par GitHub Pages et lus par les apps installées ;
+- **les icônes** du catalogue et l'outil qui les installe dans chaque app.
 
-`DMX_APPS_TOKEN` est un token *fine-grained* limité à ce dépôt, permissions **Contents** en lecture et écriture, enregistré comme secret Actions dans les dépôts sources (`dmx_utils`, `DmxServerManager`, `dmx-money-2`…).
+Le site [apps.develop-max.com](https://apps.develop-max.com) (dépôt privé `thefrcrazy/dmx-apps-web`) lit ces
+releases et les présente. L'ancienne adresse `thefrcrazy.github.io/dmx-apps/` redirige vers lui.
+
+```text
+dmx-apps/
+├── dmx-utilities/        appcast Sparkle, archives et deltas
+├── dmx-money/            manifestes de mise à jour stable et bêta (macOS, Windows)
+├── dmx-server-manager/   manifeste signé et fichiers d'installation « latest »
+├── icons/                icônes du catalogue (DMX-Icons)
+├── tools/                apply-dmx-icons.py
+└── index.html            redirection vers apps.develop-max.com
+```
+
+### Flux de mise à jour
+
+Les apps installées lisent ces adresses ; elles ne doivent pas changer.
+
+| Application | Flux |
+| --- | --- |
+| DmxUtilities | `https://thefrcrazy.github.io/dmx-apps/dmx-utilities/appcast.xml` (canal `beta` dans le même flux) |
+| DmxMoney 2 | `https://thefrcrazy.github.io/dmx-apps/dmx-money/updates.json` et `updates-rc.json` ; Windows : `dmx-money/win/` et `win-rc/` |
+| DmxServerManager | `https://thefrcrazy.github.io/dmx-apps/dmx-server-manager/release-manifest.json` |
+
+## Publier une version
+
+Chaque application publie ses releases, ses flux et ses fichiers depuis sa propre chaîne de publication (CI ou
+scripts locaux), avec une deploy key ou le token *fine-grained* `DMX_APPS_TOKEN` limité à ce dépôt
+(permission **Contents** en lecture et écriture).
+
+- **Tags préfixés par l'app** : `<app>-v<version>`, par exemple `dmx-money-v2.1.10`. Plusieurs apps partagent
+  ce dépôt, un tag `v1.0.0` nu serait ambigu. Pas de `/` dans les tags.
+- **Bêtas** : une version avec suffixe (`1.10.0-rc.1`) est publiée en pre-release et ne devient jamais
+  « Latest ».
+- **Jamais `releases/latest`** : la dernière release du dépôt peut appartenir à n'importe quelle app. Les flux
+  pointent vers des releases taguées (`releases/download/<tag>/<fichier>`).
+- **Chacun chez soi** : une release ne modifie que le dossier de son app.
+- **Notes de version** : le corps de la release est affiché tel quel sur le site ; la première ligne d'un tag
+  annoté sert de titre (workflow `Release DmxUtilities`).
+
+Le site repère seul les nouvelles releases (cache de 5 minutes). Pour l'actualiser immédiatement :
+`POST https://apps.develop-max.com/api/refresh` avec `Authorization: Bearer <REFRESH_TOKEN>`.
 
 ## Icônes
 
-Les icônes des apps viennent de la bibliothèque DMX-Icons. Après chaque
-régénération de la bibliothèque :
+Les icônes viennent de la bibliothèque DMX-Icons. Après une régénération de la bibliothèque :
 
 ```bash
-python3 tools/apply-dmx-icons.py "~/Developer/personal/Icons App/DMX-Icons" money ~/Developer/work/apps/dmx-money-2
+python3 tools/apply-dmx-icons.py <DMX-Icons> <app> <dépôt de l'app>
 ```
 
-(`utilities`, `money`, `server-manager`, `dart`, `board`, `streamhub` ou `catalog`.) Le script
-écrit les fichiers aux emplacements que chaque app attend ; ses conventions
-(marge de la grille Apple, catalogue iOS Any + Dark, favicons…) sont décrites en
-tête du fichier.
-
-Les documents et exports utilisent le contour intérieur **Inset White** de DMX-Icons
-(4 px à 1024 px, blanc à 32 %, fond clair `#FAFAFA`). L'import Money synchronise
-aussi l'icône PWA iOS dédiée et son premier plan reproductible. Board inclut
-ses ressources macOS et Linux ; StreamHub conserve les chemins de ses assets Tauri.
-Les imports copient les ressources source ; les binaires et sites des autres apps
-ne sont pas reconstruits ou publiés automatiquement.
-
-Pour garder une copie préalable des fichiers remplacés, définir
-`DMX_ICON_BACKUP_ROOT`. `DMX_ICON_REPORT` désigne un fichier JSON contenant
-les chemins écrits et leurs empreintes SHA-256.
+`<app>` vaut `utilities`, `money`, `server-manager`, `dart`, `board`, `streamhub` ou `catalog`. Le script écrit
+les fichiers aux emplacements que chaque app attend ; ses conventions (marge de la grille Apple, catalogue iOS
+Any + Dark, favicons, contour intérieur Inset White sur fond `#FAFAFA`) sont décrites en tête du fichier.
+`DMX_ICON_BACKUP_ROOT` garde une copie des fichiers remplacés ; `DMX_ICON_REPORT` produit un rapport JSON des
+chemins écrits et de leurs empreintes SHA-256.

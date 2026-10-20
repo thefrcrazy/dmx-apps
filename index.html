@@ -4,141 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DMX Apps</title>
-<meta name="description" content="Toutes les applications DMX, gratuites : téléchargements, mises à jour et liens.">
-<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="icons/favicon-32.png" type="image/png" sizes="32x32">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<style>
-  :root {
-    --bg: #f6f6f4;
-    --card: #ffffff;
-    --text: #1b1b1a;
-    --muted: #64635f;
-    --line: #e3e2de;
-    --accent: #2f5bd3;
-    --accent-text: #ffffff;
-    --chip: #efeeea;
-    --ok: #1f7a4d;
-    --soon: #9a6a00;
-    --dev: #6b5bb5;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #121212;
-      --card: #1c1c1b;
-      --text: #ecebe8;
-      --muted: #a09f9a;
-      --line: #2e2e2c;
-      --accent: #7c9dff;
-      --accent-text: #0d1430;
-      --chip: #262624;
-      --ok: #5cc994;
-      --soon: #e0b44c;
-      --dev: #b1a4f0;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  }
-  main { max-width: 1040px; margin: 0 auto; padding: 56px 16px 72px; }
-  header .brand { width: 64px; height: 64px; border-radius: 15px; margin-bottom: 16px; }
-  header h1 { font-size: 2.2rem; letter-spacing: -0.02em; margin: 0 0 8px; }
-  header p { color: var(--muted); margin: 0; max-width: 60ch; }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 16px;
-    margin-top: 40px;
-  }
-  .app {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .top { display: flex; align-items: center; gap: 14px; }
-  .top img { width: 56px; height: 56px; border-radius: 13px; flex: none; }
-  .top h2 { font-size: 1.15rem; margin: 0; }
-  .status { font-size: 0.8rem; font-weight: 600; }
-  .status.stable { color: var(--ok); }
-  .status.soon { color: var(--soon); }
-  .status.dev { color: var(--dev); }
-  .tagline { font-weight: 600; margin: 0; }
-  .description { color: var(--muted); margin: 0; font-size: 0.95rem; }
-  .platforms { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
-  .platforms li { background: var(--chip); border-radius: 999px; padding: 2px 10px; font-size: 0.8rem; }
-  .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 4px; }
-  .links a {
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 7px 14px;
-    color: var(--text);
-    text-decoration: none;
-    font-size: 0.9rem;
-  }
-  .links a.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-text); font-weight: 600; }
-  .links a:hover { border-color: var(--accent); }
-  .links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .links .none { color: var(--muted); font-size: 0.9rem; }
-  footer { color: var(--muted); font-size: 0.85rem; margin-top: 48px; }
-  footer a { color: inherit; }
-  #error { color: var(--muted); margin-top: 40px; }
-</style>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://apps.develop-max.com/">
+<script>
+  // The catalogue moved to apps.develop-max.com; old anchors (#dmx-money) open the app's page.
+  var slugs = { "dmx-utilities": "utilities", "dmx-money": "money", "dmx-server-manager": "server-manager", "dmx-dart": "dart", "dmx-board": "board" };
+  location.replace("https://apps.develop-max.com/" + (slugs[location.hash.slice(1)] || ""));
+</script>
+<meta http-equiv="refresh" content="0; url=https://apps.develop-max.com/">
 </head>
 <body>
-<main>
-  <header>
-    <img class="brand" src="icons/dmx-apps.png" alt="" width="64" height="64">
-    <h1>DMX Apps</h1>
-    <p>Toutes mes applications, gratuites. Téléchargez-les ici ; celles qui se mettent à jour automatiquement suivent les flux publiés dans ce même dépôt.</p>
-  </header>
-  <section class="grid" id="apps" aria-live="polite"></section>
-  <p id="error" hidden>Le catalogue n'a pas pu être chargé. La liste est aussi disponible dans <a href="apps.json">apps.json</a>.</p>
-  <footer>Publié depuis <a href="https://github.com/thefrcrazy/dmx-apps">github.com/thefrcrazy/dmx-apps</a>.</footer>
-</main>
-<script>
-  const STATUS = { stable: "Disponible", soon: "Bientôt disponible", dev: "En développement" };
-
-  function el(tag, attrs, text) {
-    const node = document.createElement(tag);
-    for (const [key, value] of Object.entries(attrs || {})) node.setAttribute(key, value);
-    if (text) node.textContent = text;
-    return node;
-  }
-
-  function card(app) {
-    const article = el("article", { class: "app", id: app.id });
-
-    const top = el("div", { class: "top" });
-    top.append(el("img", { src: app.icon, alt: "", width: "56", height: "56" }));
-    const heading = el("div");
-    heading.append(el("h2", {}, app.name), el("span", { class: "status " + app.status }, STATUS[app.status] || app.status));
-    top.append(heading);
-
-    const platforms = el("ul", { class: "platforms", "aria-label": "Plateformes" });
-    for (const platform of app.platforms) platforms.append(el("li", {}, platform));
-
-    const links = el("div", { class: "links" });
-    for (const link of app.links) {
-      links.append(el("a", { href: link.url, class: link.primary ? "primary" : "" }, link.label));
-    }
-    if (!app.links.length) links.append(el("span", { class: "none" }, "Pas encore de version publique."));
-
-    article.append(top, el("p", { class: "tagline" }, app.tagline), el("p", { class: "description" }, app.description), platforms, links);
-    return article;
-  }
-
-  fetch("apps.json", { cache: "no-cache" })
-    .then((response) => { if (!response.ok) throw new Error(response.status); return response.json(); })
-    .then((catalog) => document.getElementById("apps").append(...catalog.apps.map(card)))
-    .catch(() => { document.getElementById("error").hidden = false; });
-</script>
+<p>Le catalogue DMX Apps est maintenant sur <a href="https://apps.develop-max.com/">apps.develop-max.com</a>.</p>
 </body>
 </html>
