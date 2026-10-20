@@ -1,14 +1,10 @@
 {
-  "version": "2.2.0-rc.4",
-  "notes": "- Assistant : modèle d'IA au choix, propre à chaque ordinateur (**Paramètres → Assistant**).\n- Le modèle lit seulement la phrase (avec la date du jour et les noms de catégories, jamais les\n- Analyseur intégré nettement plus fort : montants en lettres (« douze euros cinquante », « trois\n- Compagnon mobile : une carte par opération et « Tout enregistrer », boutons de réponse aux",
+  "version": "2.2.0-rc.5",
+  "notes": "- Apple Intelligence répond de nouveau : un mot mal dicté (« chatte au chocolat ») faisait refuser\n- Mistral Vibe et Antigravity sont reconnus comme connectés (trousseau de Vibe, liste des modèles\n- **Paramètres → Assistant** : choix du modèle parmi ceux accessibles au compte (Claude Haiku,\n- Les erreurs de dictée sont corrigées d'après le contexte (« pain au chocolat ») ; le libellé",
   "platforms": {
     "darwin-arm64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.0-rc.4/DmxMoney-2.2.0-rc.4-apple-silicon.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.0-rc.5/DmxMoney-2.2.0-rc.5-apple-silicon.dmg",
       "minimumSystemVersion": "26.0"
-    },
-    "darwin-x86_64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.0-rc.4/DmxMoney-2.2.0-rc.4-intel-catalina.dmg",
-      "minimumSystemVersion": "10.15"
     }
   }
 }
