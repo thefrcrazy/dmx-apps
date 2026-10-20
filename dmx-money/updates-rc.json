@@ -1,9 +1,9 @@
 {
-  "version": "2.2.0-rc.5",
-  "notes": "- Apple Intelligence répond de nouveau : un mot mal dicté (« chatte au chocolat ») faisait refuser\n- Mistral Vibe et Antigravity sont reconnus comme connectés (trousseau de Vibe, liste des modèles\n- **Paramètres → Assistant** : choix du modèle parmi ceux accessibles au compte (Claude Haiku,\n- Les erreurs de dictée sont corrigées d'après le contexte (« pain au chocolat ») ; le libellé",
+  "version": "2.2.0-rc.6",
+  "notes": "- Assistant : « hier », « avant-hier », « il y a trois jours » donnent la bonne date avec un\n- Plusieurs opérations sur des comptes différents (« … sur le courant et … sur Maxim ») gardent\n- Le récapitulatif de plusieurs opérations montre le compte et la date de chacune.\n- Métadonnées alignées sur `2.2.0-rc.6`, build Apple 25.",
   "platforms": {
     "darwin-arm64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.0-rc.5/DmxMoney-2.2.0-rc.5-apple-silicon.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.0-rc.6/DmxMoney-2.2.0-rc.6-apple-silicon.dmg",
       "minimumSystemVersion": "26.0"
     }
   }
