@@ -1,13 +1,13 @@
 {
-  "version": "2.2.0-rc.3",
-  "notes": "- Assistant du compagnon mobile : phrases libres comprises (« j'ai payé 45 € pour le cinéma hier »,\n- La phrase entière s'affiche pendant la dictée ; l'opération comprise est présentée en aperçu et\n- Le modèle Apple Intelligence n'est sollicité que pour une phrase que le noyau ne comprend pas, et\n- Demande limitée à 500 caractères ; caractères de contrôle et d'inversion bidirectionnelle retirés",
+  "version": "2.2.0-rc.4",
+  "notes": "- Assistant : modèle d'IA au choix, propre à chaque ordinateur (**Paramètres → Assistant**).\n- Le modèle lit seulement la phrase (avec la date du jour et les noms de catégories, jamais les\n- Analyseur intégré nettement plus fort : montants en lettres (« douze euros cinquante », « trois\n- Compagnon mobile : une carte par opération et « Tout enregistrer », boutons de réponse aux",
   "platforms": {
     "darwin-arm64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.0-rc.3/DmxMoney-2.2.0-rc.3-apple-silicon.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.0-rc.4/DmxMoney-2.2.0-rc.4-apple-silicon.dmg",
       "minimumSystemVersion": "26.0"
     },
     "darwin-x86_64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.0-rc.3/DmxMoney-2.2.0-rc.3-intel-catalina.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.0-rc.4/DmxMoney-2.2.0-rc.4-intel-catalina.dmg",
       "minimumSystemVersion": "10.15"
     }
   }
