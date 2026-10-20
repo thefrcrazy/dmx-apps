@@ -3,7 +3,11 @@
 Toutes les applications DMX distribuées gratuitement : téléchargements, flux de
 mise à jour automatique et liens vers les web apps.
 
-**Catalogue : <https://thefrcrazy.github.io/dmx-apps/>**
+**Catalogue : <https://apps.develop-max.com>**
+
+Le site du catalogue vit dans le dépôt privé `thefrcrazy/dmx-apps-web` et lit les
+GitHub Releases de ce dépôt. Les flux de mise à jour restent servis ici, par GitHub
+Pages (`https://thefrcrazy.github.io/dmx-apps/<app>/…`).
 
 Le code source de chaque application vit dans son propre dépôt, qui peut être
 privé. Ce dépôt public ne contient que ce dont les utilisateurs et les apps
