@@ -34,7 +34,7 @@ Le code de chaque application vit dans son propre dépôt, souvent privé. Ce d�
 dont les utilisateurs et les apps installées ont besoin :
 
 - **les binaires**, attachés aux GitHub Releases ;
-- **les flux de mise à jour**, servis par GitHub Pages et lus par les apps installées ;
+- **les flux de mise à jour**, relayés par apps.develop-max.com (et encore servis par GitHub Pages) ;
 - **les icônes** du catalogue et l'outil qui les installe dans chaque app.
 
 Le site [apps.develop-max.com](https://apps.develop-max.com) (dépôt privé `thefrcrazy/dmx-apps-web`) lit ces
@@ -52,13 +52,33 @@ dmx-apps/
 
 ### Flux de mise à jour
 
-Les apps installées lisent ces adresses ; elles ne doivent pas changer.
+**apps.develop-max.com/feeds** relaie les flux de ce dépôt (cache d'une minute, contenu
+identique ; les archives redirigent vers `raw.githubusercontent.com`). Les prochaines versions
+des apps le lisent en premier ; les versions déjà installées lisent encore GitHub Pages, qui sert
+les mêmes fichiers.
 
-| Application | Flux |
-| --- | --- |
-| DmxUtilities | `https://thefrcrazy.github.io/dmx-apps/dmx-utilities/appcast.xml` (canal `beta` dans le même flux) |
-| DmxMoney 2 | `https://thefrcrazy.github.io/dmx-apps/dmx-money/updates.json` et `updates-rc.json` ; Windows : `dmx-money/win/` et `win-rc/` |
-| DmxServerManager | `https://thefrcrazy.github.io/dmx-apps/dmx-server-manager/release-manifest.json` |
+| Application | Nouvelle adresse | Adresse GitHub Pages |
+| --- | --- | --- |
+| DmxUtilities | `https://apps.develop-max.com/feeds/dmx-utilities/appcast.xml` | `https://thefrcrazy.github.io/dmx-apps/dmx-utilities/appcast.xml` |
+| DmxMoney 2 | `…/feeds/dmx-money/updates.json`, `updates-rc.json` ; Windows : `…/feeds/dmx-money/win/`, `win-rc/` | mêmes chemins sous `thefrcrazy.github.io/dmx-apps/` |
+| DmxServerManager | `…/feeds/dmx-server-manager/release-manifest.json` (signé, relayé tel quel) | `thefrcrazy.github.io/dmx-apps/dmx-server-manager/release-manifest.json` |
+
+### Bascule hors de GitHub Pages
+
+Pages ne peut pas être coupé tant que des versions installées lisent ses adresses : elles
+ne recevraient plus aucune mise à jour.
+
+1. **Fait** : apps.develop-max.com relaie les flux sous `/feeds` (dépôt `dmx-apps-web`).
+2. **Prêt sur les branches `feeds/apps-develop-max`** de `dmx_utils`, `dmx-money-2` et
+   `DmxServerManager` : chaque app lit d'abord apps.develop-max.com. DmxMoney garde Pages
+   puis l'ancien dépôt en secours ; DmxServerManager garde son propre dépôt en secours ;
+   DmxUtilities (Sparkle n'accepte qu'un flux) lit uniquement le site.
+3. Publier une version de chaque app depuis ces branches. Les versions précédentes
+   continuent de lire Pages et y trouvent la nouvelle version, qui lira ensuite le site.
+4. Laisser le temps aux installations de se mettre à jour (quelques mois), puis
+   désactiver Pages. La page d'accueil redirige aujourd'hui les anciens liens
+   (`…/dmx-apps/#dmx-money`) : ils ne fonctionneront plus.
+5. Retirer ensuite les secours Pages du code de DmxMoney.
 
 ## Publier une version
 
