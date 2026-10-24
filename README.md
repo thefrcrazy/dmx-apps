@@ -93,8 +93,9 @@ scripts locaux), avec une deploy key ou le token *fine-grained* `DMX_APPS_TOKEN`
 - **Jamais `releases/latest`** : la dernière release du dépôt peut appartenir à n'importe quelle app. Les flux
   pointent vers des releases taguées (`releases/download/<tag>/<fichier>`).
 - **Chacun chez soi** : une release ne modifie que le dossier de son app.
-- **Notes de version** : le corps de la release est affiché tel quel sur le site ; la première ligne d'un tag
-  annoté sert de titre (workflow `Release DmxUtilities`).
+- **Notes de version** : le corps de la release est affiché tel quel sur le site. DmxUtilities crée sa
+  release depuis le Mac de publication (`gh release create`), avec l'archive et ses extensions de navigateur :
+  aucun workflow ne tourne pour elle.
 
 Le site repère seul les nouvelles releases (cache de 5 minutes). Pour l'actualiser immédiatement :
 `POST https://apps.develop-max.com/api/refresh` avec `Authorization: Bearer <REFRESH_TOKEN>`.
