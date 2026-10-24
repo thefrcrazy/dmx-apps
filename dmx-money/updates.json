@@ -1,13 +1,13 @@
 {
-  "version": "2.2.0",
-  "notes": "- L'assistant comprend les phrases libres pour saisir des dépenses, des revenus, des virements,\n- Choisissez le modèle de compréhension sur Mac : Apple Intelligence, Claude Code, Codex,\n- Les phrases avec plusieurs opérations conservent la date et le compte de chacune ; les dates\n- Le compagnon mobile présente une carte par opération, propose des réponses guidées et adopte une",
+  "version": "2.2.1",
+  "notes": "- Windows : l'application ne se ferme plus au premier lancement après une mise à jour, quand",
   "platforms": {
     "darwin-arm64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.0/DmxMoney-2.2.0-apple-silicon.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.1/DmxMoney-2.2.1-apple-silicon.dmg",
       "minimumSystemVersion": "26.0"
     },
     "darwin-x86_64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.0/DmxMoney-2.2.0-intel-catalina.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.1/DmxMoney-2.2.1-intel-catalina.dmg",
       "minimumSystemVersion": "10.15"
     }
   }
