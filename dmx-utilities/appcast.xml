@@ -3,6 +3,22 @@
     <channel>
         <title>DmxUtilities</title>
         <item>
+            <title>1.10.2</title>
+            <pubDate>Sat, 24 Oct 2026 13:20:54 +0200</pubDate>
+            <sparkle:version>73</sparkle:version>
+            <sparkle:shortVersionString>1.10.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <enclosure url="https://apps.develop-max.com/feeds/dmx-utilities/releases/DmxUtilities-1.10.2.zip" length="5578266" type="application/octet-stream" sparkle:edSignature="xP99Q29r0DxaGp0dv6qPI4/Yl39qM118y18c+if5mPXa5iF2KxlhbofsqqDzLynwXPbdlBcvJ8xG97aLjN7PAw=="/>
+            <sparkle:deltas>
+                <enclosure url="https://apps.develop-max.com/feeds/dmx-utilities/releases/DmxUtilities73-72.delta" sparkle:deltaFrom="72" length="371134" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="Pg/j/0FRZFpPOEpRx47jXtWzfLsvXwKKbqdQ1W2KObrYiKh04cUk2GIaMOtY4wsNDJRoMw6x2cEChS1y9QsvAg=="/>
+                <enclosure url="https://apps.develop-max.com/feeds/dmx-utilities/releases/DmxUtilities73-70.delta" sparkle:deltaFrom="70" length="400002" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="4Bcb9ExZCabKIp8EshJpEjx/iN7PS7y2m9M31pZi1BD50Gk/9sSHnXg82+fFFi6O9bRv8/1fKEtRSGadd8dMDQ=="/>
+                <enclosure url="https://apps.develop-max.com/feeds/dmx-utilities/releases/DmxUtilities73-69.delta" sparkle:deltaFrom="69" length="400030" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="NTQOF4eNUD1GiTkuD87hiwtVr4iRDmyzvYTnNYsCKon2tNWoYQ3kCt/bY82AO93ka1ljusxGlhL9jmwf8B9sBg=="/>
+                <enclosure url="https://apps.develop-max.com/feeds/dmx-utilities/releases/DmxUtilities73-68.delta" sparkle:deltaFrom="68" length="495658" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="GPkTPZ4JljSRSJ/4GiajH1/SpZmgDJoJyqkjOw+bxayrxPxPzQNQetQhV38hQfy88QVVX1DUIPIy/ieejKGwBA=="/>
+                <enclosure url="https://apps.develop-max.com/feeds/dmx-utilities/releases/DmxUtilities73-67.delta" sparkle:deltaFrom="67" length="495406" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="It0cOb8WiQsJJRYXAQrNWeGKdENrv0wx+GbopbQ/SDiieLnKfXG1RLIsccRPSLnf+Ufi8/yE/Kvp/DyFEtl8AA=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.10.1</title>
             <pubDate>Fri, 23 Oct 2026 22:53:05 +0200</pubDate>
             <sparkle:version>72</sparkle:version>
@@ -49,22 +65,6 @@
                 <enclosure url="https://apps.develop-max.com/feeds/dmx-utilities/releases/DmxUtilities69-66.delta" sparkle:deltaFrom="66" length="483662" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="cc7X2IA4JKJeHw/lvrckmq2sNZfLKZJkKrAJkUaVr+z1+M0LlkhHP3t/wrXhCoHpGqz9GVNz3AFurulXFKyoCQ=="/>
                 <enclosure url="https://apps.develop-max.com/feeds/dmx-utilities/releases/DmxUtilities69-65.delta" sparkle:deltaFrom="65" length="560994" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="OO7oD4wbxEIDbydTZhPu9hsVosrMncFtUnQfWUoSZ+6XDzte5qDSwNaNKGMxp60WhNBfYuARV0ltG5BK+ktXAA=="/>
                 <enclosure url="https://apps.develop-max.com/feeds/dmx-utilities/releases/DmxUtilities69-64.delta" sparkle:deltaFrom="64" length="1641686" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="4UH41tYkgwS8E4Kx9xPLAYl4ERrQaj1ar+JNfTYN8RV7nLEr87jcFAFINlDje3LXOVxxIWH88xIamOZuZdNmDg=="/>
-            </sparkle:deltas>
-        </item>
-        <item>
-            <title>1.9.10</title>
-            <pubDate>Tue, 13 Oct 2026 08:50:32 +0200</pubDate>
-            <sparkle:version>63</sparkle:version>
-            <sparkle:shortVersionString>1.9.10</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <enclosure url="https://apps.develop-max.com/feeds/dmx-utilities/releases/DmxUtilities-1.9.10.zip" length="5297996" type="application/octet-stream" sparkle:edSignature="WLJKn7QjMpM5a/i+khZgyd0TQlHcVL4QooerSbtKTbI00w+m6vqL7ZzpNk3s7Ygd9Z+Je6vGP8iGbedhuYrzDg=="/>
-            <sparkle:deltas>
-                <enclosure url="https://apps.develop-max.com/feeds/dmx-utilities/releases/DmxUtilities63-62.delta" sparkle:deltaFrom="62" length="1032054" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="GFez557gIUHFG18IOojJSzMTn3N98+gmUOtuNFBv/BpIb9aZHDYXB2YJQgZweJvoVeQE/Umxg0OZIe51ApIAAg=="/>
-                <enclosure url="https://apps.develop-max.com/feeds/dmx-utilities/releases/DmxUtilities63-61.delta" sparkle:deltaFrom="61" length="1032034" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="dm5W8ldxEiW1PZVBQ2QTcCf3EWVTIqUYrmq3tJy0krj9iLVNYFZ2ejmtoky+r+i+GxEDbD6dzQOhwfnIWIjRDw=="/>
-                <enclosure url="https://apps.develop-max.com/feeds/dmx-utilities/releases/DmxUtilities63-60.delta" sparkle:deltaFrom="60" length="1298470" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="QeUfyOQYPabveSM5VvQlQ2rvdK26ifLjSN4gj7R4canAX/+7ai43+Aua/wOKSlx3PitHnqJ10lPnRnH2g7w6Ag=="/>
-                <enclosure url="https://apps.develop-max.com/feeds/dmx-utilities/releases/DmxUtilities63-59.delta" sparkle:deltaFrom="59" length="1371562" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="x11zbiie+djUDqeAKiSP6tS3NOG1Xvh2gWpHmTDcMyWoL1NEVv+GAI3XPrY6ZJwAUSd5osHROzjqKfVS3SYLAw=="/>
-                <enclosure url="https://apps.develop-max.com/feeds/dmx-utilities/releases/DmxUtilities63-58.delta" sparkle:deltaFrom="58" length="1439082" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="5HrRJmdK7TANvaAYAcE6KY7sbnaTcmeTD6qXuHz30+9vkXZXdZG3CG3Di3IbeCyNYSHI/aUtdhJpSaiE4lOfBg=="/>
             </sparkle:deltas>
         </item>
     </channel>
