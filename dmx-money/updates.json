@@ -1,13 +1,13 @@
 {
-  "version": "2.2.0",
-  "notes": "- L'assistant comprend les phrases libres pour saisir des dépenses, des revenus, des virements,\n- Choisissez le modèle de compréhension sur Mac : Apple Intelligence, Claude Code, Codex,\n- Les phrases avec plusieurs opérations conservent la date et le compte de chacune ; les dates\n- Le compagnon mobile présente une carte par opération, propose des réponses guidées et adopte une",
+  "version": "2.2.2",
+  "notes": "- Mac : installez cette version une fois à la main (DMG depuis apps.develop-max.com/money) : la clé de signature des mises à jour a changé, la mise à jour automatique des versions précédentes la refuse. Les suivantes s'installeront de nouveau toutes seules.\n- Mac : « Vérifier les mises à jour… » depuis la barre des menus, fenêtre fermée, installe la mise à jour au lieu d'ouvrir le DMG dans le navigateur.\n- Windows : depuis l'icône de la zone de notification, la fenêtre s'ouvre pour afficher la mise à jour et sa confirmation, au lieu de rester bloquée en arrière-plan.\n- Windows : l'application ne se ferme plus au premier lancement après une mise à jour, quand elle présente les nouveautés (correctif de la 2.2.1, retirée).",
   "platforms": {
     "darwin-arm64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.0/DmxMoney-2.2.0-apple-silicon.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.2/DmxMoney-2.2.2-apple-silicon.dmg",
       "minimumSystemVersion": "26.0"
     },
     "darwin-x86_64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.0/DmxMoney-2.2.0-intel-catalina.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.2/DmxMoney-2.2.2-intel-catalina.dmg",
       "minimumSystemVersion": "10.15"
     }
   }
