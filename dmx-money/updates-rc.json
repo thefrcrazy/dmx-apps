@@ -1,13 +1,13 @@
 {
-  "version": "2.2.2",
-  "notes": "- Mac : installez cette version une fois à la main (DMG depuis apps.develop-max.com/money) : la clé de signature des mises à jour a changé, la mise à jour automatique des versions précédentes la refuse. Les suivantes s'installeront de nouveau toutes seules.\n- Mac : « Vérifier les mises à jour… » depuis la barre des menus, fenêtre fermée, installe la mise à jour au lieu d'ouvrir le DMG dans le navigateur.\n- Windows : depuis l'icône de la zone de notification, la fenêtre s'ouvre pour afficher la mise à jour et sa confirmation, au lieu de rester bloquée en arrière-plan.\n- Windows : l'application ne se ferme plus au premier lancement après une mise à jour, quand elle présente les nouveautés (correctif de la 2.2.1, retirée).",
+  "version": "2.2.3-rc.1",
+  "notes": "- Assistant sur ordinateur : une fenêtre pour écrire ou dicter au micro une dépense, un revenu, un virement ou une question, comme dans le compagnon mobile ; chaque opération s'affiche en carte et n'est enregistrée qu'après confirmation.\n- Mac : dictée par la reconnaissance vocale du Mac (bouton Assistant de la barre d'outils, ⌘J, menu de la barre des menus).\n- Windows : dictée par la reconnaissance vocale de Windows (bouton Assistant, Ctrl+J, menu de la zone de notification).\n- Linux : dictée sur l'ordinateur avec Whisper, dont le modèle (~150 Mo) se télécharge à la première dictée (bouton Assistant, Ctrl+J, menu de la zone de notification).",
   "platforms": {
     "darwin-arm64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.2/DmxMoney-2.2.2-apple-silicon.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.3-rc.1/DmxMoney-2.2.3-rc.1-apple-silicon.dmg",
       "minimumSystemVersion": "26.0"
     },
     "darwin-x86_64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.2/DmxMoney-2.2.2-intel-catalina.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.3-rc.1/DmxMoney-2.2.3-rc.1-intel-catalina.dmg",
       "minimumSystemVersion": "10.15"
     }
   }
