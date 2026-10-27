@@ -1,13 +1,13 @@
 {
-  "version": "2.2.3-rc.1",
-  "notes": "- Assistant sur ordinateur : une fenêtre pour écrire ou dicter au micro une dépense, un revenu, un virement ou une question, comme dans le compagnon mobile ; chaque opération s'affiche en carte et n'est enregistrée qu'après confirmation.\n- Mac : dictée par la reconnaissance vocale du Mac (bouton Assistant de la barre d'outils, ⌘J, menu de la barre des menus).\n- Windows : dictée par la reconnaissance vocale de Windows (bouton Assistant, Ctrl+J, menu de la zone de notification).\n- Linux : dictée sur l'ordinateur avec Whisper, dont le modèle (~150 Mo) se télécharge à la première dictée (bouton Assistant, Ctrl+J, menu de la zone de notification).",
+  "version": "2.2.3-rc.3",
+  "notes": "- Paramètres plus clairs : trois onglets. Général réunit l'apparence, les sauvegardes, la version et les mises à jour ; Assistant et Compagnon restent à part.\n- Catégories : « Catégories par défaut… » en deux étapes. Cochez d'abord les catégories par défaut à ajouter, puis triez les vôtres : chacune est gardée ou transférée vers une catégorie par défaut, proposée d'après son nom. Le journal, l'échéancier, les budgets et les transactions fictives suivent. Dans le compagnon mobile, c'est l'ordinateur appairé qui fait le travail.\n- Prédictions : « Ajouter au journal » aussi depuis le formulaire d'une transaction fictive, qui enregistre d'abord vos modifications.\n- Mac : la conversation de l'assistant reste quand on ferme sa fenêtre ; « Nouvelle conversation » repart de zéro.",
   "platforms": {
     "darwin-arm64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.3-rc.1/DmxMoney-2.2.3-rc.1-apple-silicon.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.3-rc.3/DmxMoney-2.2.3-rc.3-apple-silicon.dmg",
       "minimumSystemVersion": "26.0"
     },
     "darwin-x86_64": {
-      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.3-rc.1/DmxMoney-2.2.3-rc.1-intel-catalina.dmg",
+      "url": "https://github.com/thefrcrazy/dmx-apps/releases/download/dmx-money-v2.2.3-rc.3/DmxMoney-2.2.3-rc.3-intel-catalina.dmg",
       "minimumSystemVersion": "10.15"
     }
   }
